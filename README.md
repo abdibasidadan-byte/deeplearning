@@ -27,8 +27,21 @@ for text in comments:
     print(f"\nText: {text}")
     print(f"Prediction: {result['labels'][0]} (Confidence Score: {result['scores'][0]:.2f})")
 
+# 5 Display the plot
+import matplotlib.pyplot as plt
 
-# Model Output :
+labels = result['labels']
+scores = result['scores']
+plt.bar(labels, scores, color=['firebrick', 'royalblue', 'seagreen'])
+
+plt.title("Probability Distribution (Confidence Scores)")
+plt.xlabel("Business Categories")
+plt.ylabel("Probability (0 to 1)")
+
+plt.show()
+
+
+#6  Model Output :
 
 # Text: "I think the subscription has become too expensive for what it is." Prediction: Churn Risk (Confidence: 0.58)
 
@@ -45,6 +58,10 @@ for text in comments:
 
 # For the third result (0.52): > "The model correctly sensed an intent to switch. Mentioning 'competition' and 'contract expiration' triggers a high probability for a retention-related support ticket."
 
+
+
+
+@(c) 2025 Abdi-Basid ADAN [abdi-basid@outlook.com]
 
 
 
